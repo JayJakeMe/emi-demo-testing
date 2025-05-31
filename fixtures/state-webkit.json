@@ -1,0 +1,102 @@
+{
+  "cookies": [
+    {
+      "name": "_ga_2PGC8B3N0F",
+      "value": "GS2.1.s1748699895$o1$g0$t1748699900$j55$l0$h0",
+      "domain": ".emicalculator.net",
+      "path": "/",
+      "expires": 1811771900,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_ga",
+      "value": "GA1.1.1204550606.1748699895",
+      "domain": ".emicalculator.net",
+      "path": "/",
+      "expires": 1811771895,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "FCCDCF",
+      "value": "%5Bnull%2Cnull%2Cnull%2C%5B%22CQSRsEAQSRsEAEsACBENBtFoAP_gAEPgABBoINJD7C7FbSFCyD5zaLsAMAhHRsAAQoQAAASBAmABQAKQIAQCgkAYFASABAACAAAAICRBIQIECAAAAUAAQAAAAAAEAAAAAAAIIAAAgAEAAAAIAAACAIAAEAAIAAAAEAAAmAgAAIIACAAAgAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAQNVSD2F2K2kKFkHCmwXYAYBCujYAAhQgAAAkCBMACgAUgQAgFJIAgCIEAAAAAAAAAQEiCQAAQABAAAIACgAAAAAAIAAAAAAAQQAABAAIAAAAAAAAEAQAAIAAQAAAAIAABEhAAAQQAEAAAAAAAQAAA%22%2C%222~70.89.93.108.122.149.184.196.236.259.311.313.314.323.358.415.442.486.494.495.540.574.609.723.864.981.1029.1048.1051.1095.1097.1126.1205.1276.1301.1365.1415.1449.1514.1570.1577.1598.1651.1716.1735.1753.1765.1870.1878.1889.1958.1960.2072.2253.2299.2373.2415.2506.2526.2531.2568.2571.2575.2624.2677.2778~dv.%22%2C%22341608B5-90BD-4BED-9336-BD1CCF101365%22%5D%5D",
+      "domain": ".emicalculator.net",
+      "path": "/",
+      "expires": 1782395897,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "__gads",
+      "value": "ID=868eb1f436f020a5:T=1748699898:RT=1748699898:S=ALNI_MaMpjgflE03lWXG6z5GJnxuj1GfVg",
+      "domain": ".emicalculator.net",
+      "path": "/",
+      "expires": 1782395898,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "__gpi",
+      "value": "UID=000010cb84bddaac:T=1748699898:RT=1748699898:S=ALNI_MbM5HKpZpBVml3rnx7SgurCdrnPDQ",
+      "domain": ".emicalculator.net",
+      "path": "/",
+      "expires": 1782395898,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "__eoi",
+      "value": "ID=5cc469ef821cef41:T=1748699898:RT=1748699898:S=AA-AfjbOT27xO15quO37Rk_db-BG",
+      "domain": ".emicalculator.net",
+      "path": "/",
+      "expires": 1764251898,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "FCNEC",
+      "value": "%5B%5B%22AKsRol83hRvuVPc6ZkiPPUKXZMyECCW_1mBsg2nQbuWm4k1ytI6QPem5qTP59QVvxOqHJWe9XzYNQFiptvLM9-RGMxqYG6S2QM3FKlw5YuAD6EROxstntVBe0Zxlqim5ALNWkDHPI3xkmXCa_uFyhujBNa-VUZSalg%3D%3D%22%5D%5D",
+      "domain": ".emicalculator.net",
+      "path": "/",
+      "expires": 1780235899,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    }
+  ],
+  "origins": [
+    {
+      "origin": "https://emicalculator.net",
+      "localStorage": [
+        {
+          "name": "google_ama_config",
+          "value": "[[[[null,0,null,[],null,null,\"BODY\"],3,[\"10px\",\"10px\",1],[5],null,[],[],1,[],[5]],[[null,0,null,[],null,null,\"BODY>DIV.wrap.container>DIV.content.row\"],4,[\"10px\",\"10px\",1],[3],null,[],[],1,[],[5]],[[null,0,null,[],null,null,\"ASIDE.sidebar>SECTION.widget.widget_nav_menu\"],4,[\"30px\",\"30px\",0],[0],null,[],[],1,[],[]],[[null,0,null,[],null,null,\"BODY\"],2,[\"10px\",\"10px\",1],[4],null,[],[],1,[],[]],[[null,0,null,[],null,null,\"ASIDE.sidebar>SECTION.widget.widget_search\"],1,[\"10px\",\"30px\",0],[0],null,[],[],1,[],[]],[[null,0,null,[],null,null,\"HEADER\"],4,[\"10px\",\"20px\",1],[2],null,[],[],1,[],[]],[[null,0,null,[],null,null,\"BODY>FOOTER.content-info\"],1,[\"10px\",\"10px\",1],[0],null,[],[],1,[],[2,4]],[[null,0,null,[],null,null,\"ASIDE.sidebar>SECTION.widget.widget_recent_entries\"],4,[\"10px\",\"30px\",1],[0],null,[],[],1,[],[]],[[null,0,null,[],null,null,\"ASIDE.sidebar>SECTION.widget.widget_search\"],4,[\"30px\",\"30px\",0],[0],null,[],[],1,[],[]]],[],[1748786299260],\"20250528_103431\",[],[[[[null,0,null,[],null,null,\"DIV.entry-content>UL\"],[null,null,null,[],null,null,\"LI\"],null,[null,null,null,[],null,null,\"LI\"]],[[null,null,null,[],null,null,\"DIV#panel-7-0-0-0>DIV.so-widget-sow-editor.so-widget-sow-editor-base>DIV.siteorigin-widget-tinymce.textwidget\"],[null,null,null,[],null,null,\"BLOCKQUOTE,P\"],null,[null,null,null,[],null,null,\"BLOCKQUOTE,H2,IMG.size-full.alignleft,LI,P\"]],[[null,1,null,[],null,null,\"DIV.entry-content>UL\"],[null,null,null,[],null,null,\"LI\"],null,[null,null,null,[],null,null,\"LI\"]],[[null,null,null,[],null,null,\"DIV.entry-content\"],[null,null,null,[],null,null,\"BLOCKQUOTE,P\"],null,[null,null,null,[],null,null,\"BLOCKQUOTE,H2,LI,P\"]],[[null,null,null,[],null,null,\"DIV#amortizationscheduleheader\"],[null,null,null,[]]],[[null,null,null,[],null,null,\"DIV#panel-7-0-0-0>DIV.so-widget-sow-editor.so-widget-sow-editor-base>DIV.siteorigin-widget-tinymce.textwidget>UL\"],[null,null,null,[],null,null,\"LI\"],null,[null,null,null,[],null,null,\"LI\"]],[[null,null,null,[],null,null,\"DIV.entry-content>UL\"],[null,null,null,[],null,null,\"LI\"],null,[null,null,null,[],null,null,\"LI\"]]]],[[null,[1,3,2],null,\"5132069326\",[],[],[0,2],null,null,[0,null,1],[]]],[null,[[1,\"1vp\",[[4,\"2vp\",\"2vp\"],[6,\"3vp\",\"3vp\"]],8,\"1vp\",0.30000001,[\"0.2vp\",\"0vp\",2]],[2,\"300px\",[[4,\"600px\",\"600px\"],[6,\"900px\",\"900px\"]],8,\"300px\",0.30000001,[\"60px\",\"0px\",2]]]],null,null,null,null,null,null,[null,null,null,null,null,null,null,null,null,null,null,0],null,null,[1,null,null,[]],null,[1003963459],null,null,[1748571650324],null,null,null,null,null,null,null,null,null,[[\"Toggle toolbar expansion\",\"Toggle privacy and legal settings display\",\"Dismiss privacy and legal settings display\"]]]"
+        },
+        {
+          "name": "google_ama_settings",
+          "value": "[1748786299527,1]"
+        },
+        {
+          "name": "google_adsense_settings",
+          "value": "{\"ca-pub-6020664305604651\":[\"ca-pub-6020664305604651\"]}"
+        }
+      ]
+    },
+    {
+      "origin": "https://www.google.com",
+      "localStorage": [
+        {
+          "name": "rc::h",
+          "value": "1748699898833"
+        }
+      ]
+    }
+  ]
+}
