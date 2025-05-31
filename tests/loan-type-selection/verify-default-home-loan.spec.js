@@ -3,7 +3,6 @@ const { test, expect } = require('../../fixtures/emiCalculator.fixture');
 test('verify home loan amount field visibility and value', async ({ emiCalculatorPage }) => {
   const page = emiCalculatorPage;
 
-  
   await expect(page.getByRole('link', { name: 'Home Loan', exact: true })).toBeVisible();
   
   // Verify the Home Loan Amount field is visible
@@ -44,5 +43,6 @@ test('verify home loan amount field visibility and value', async ({ emiCalculato
   console.log('Loan Tenure value:', loanTenureValue);
   expect(loanTenureValue).toBe('20');
 
-  console.log('Test completed successfully!');
+  console.log('\n✓ All values match the expected defaults for Home Loan');
+  console.log('✓ Home Loan test completed successfully!');
 });
