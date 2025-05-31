@@ -1,0 +1,14 @@
+# Default owners for everything in the repo
+# The @JayJakeMe is your GitHub username from the repository URL
+*       @JayJakeMe
+
+# You can also specify different owners for different paths, for example:
+# /tests/      @JayJakeMe @another-reviewer
+# /helper/     @JayJakeMe
+# /*.js        @JayJakeMe
+# /*.md        @JayJakeMe @documentation-team
+
+# The last matching pattern has the most precedence.
+# So if you want to exclude certain files from ownership rules, you can do:
+# /docs/*.md  @docteam
+# /docs/*     @JakeL  # This will apply to all files in /docs/ except .md files
