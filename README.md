@@ -116,3 +116,67 @@ npx playwright test --headed
     - `setSliderValue(page, selector, value, fieldName, min, max)` - Sets slider value with visual feedback
     - Handles slider drag interactions
     - Includes validation of the set value
+
+
+## Test Cases
+
+### Loan Type Selection Tests
+
+| ID | Test Case | Steps | Expected Result |
+|----|-----------|-------|-----------------|
+| TC01 | Verify default loan type | 1. Launch the application | Home Loan should be selected by default |
+| TC02 | Select Personal Loan | 1. Click "Personal Loan" option | Loan type changes to Personal Loan |
+| TC03 | Select Car Loan | 1. Click "Car Loan" option | Loan type changes to Car Loan |
+| TC04 | Switch from Personal to Car Loan | 1. Select Personal Loan<br>2. Click "Car Loan" | Loan type updates to Car Loan |
+| TC05 | Switch from Car to Home Loan | 1. Select Car Loan<br>2. Click "Home Loan" | Loan type updates to Home Loan |
+| TC06 | Verify all loan types | 1. Check all loan type options | All loan types should be selectable |
+| TC07 | Visual feedback on selection | 1. Select any loan type | Visual feedback (highlight/active state) appears |
+| TC08 | Persistence after refresh | 1. Select a loan type<br>2. Refresh the page | Selected loan type persists |
+| TC09 | Mobile responsiveness | 1. Test on mobile view | Loan type selector is usable and responsive |
+| TC10 | Accessibility | 1. Test with keyboard navigation | All loan types are accessible via keyboard |
+
+
+### Loan Amount Tests
+
+#### Loan Amount Slider Tests
+
+| ID | Test Case | Steps | Expected Result |
+|----|-----------|-------|-----------------|
+| TC11 | Verify default loan amount | 1. Launch the application | Loan amount should default to the minimum (e.g., ₹0) |
+| TC12 | Adjust to maximum loan amount | 1. Slide to maximum amount | Loan amount should reflect the maximum value |
+| TC13 | Adjust to minimum loan amount | 1. Slide to minimum amount | Loan amount should reflect the minimum value |
+| TC14 | Check incremental adjustments | 1. Slide slowly | Loan amount should change in defined increments |
+| TC15 | Validate amount update | 1. Slide to ₹30,00,000 | Monthly EMI, total interest, and total payment should update accordingly |
+| TC16 | Verify input field sync | 1. Slide to ₹50,00,000 | Input field should display the same loan amount as slider |
+| TC17 | Enforce maximum limit | 1. Slide beyond maximum | Slider should not allow values greater than the preset maximum |
+
+### Interest Rate Tests
+
+#### Interest Rate Slider Tests
+
+| ID | Test Case | Steps | Expected Result |
+|----|-----------|-------|-----------------|
+| TC21 | Verify default interest rate | 1. Launch the application | Interest rate should default to a standard value (e.g., 10%) |
+| TC22 | Adjust to maximum interest rate | 1. Slide to maximum rate | Interest rate should reflect the maximum allowed value |
+| TC23 | Adjust to minimum interest rate | 1. Slide to minimum rate | Interest rate should reflect the minimum allowed value |
+| TC24 | Check rate increment precision | 1. Adjust slider in small increments | Rate should change in precise decimal steps (e.g., 0.1%) |
+| TC25 | Validate EMI updates with rate change | 1. Change interest rate | EMI, total interest, and total payment should recalculate accordingly |
+| TC26 | Verify input field sync | 1. Manually enter an interest rate | Slider should update to match the entered rate |
+| TC27 | Boundary value testing | 1. Enter rates at boundaries (min/max) | System should handle min/max rate values correctly |
+
+### Loan Tenure Tests
+
+#### Loan Tenure Slider Tests
+
+| ID | Test Case | Steps | Expected Result |
+|----|-----------|-------|-----------------|
+| TC31 | Verify default tenure | 1. Launch the application | Tenure should default to a standard value (e.g., 5 years) |
+| TC32 | Adjust to maximum tenure | 1. Slide to maximum years | Tenure should reflect the maximum allowed value (e.g., 30 years) |
+| TC33 | Adjust to minimum tenure | 1. Slide to minimum years | Tenure should reflect the minimum allowed value (e.g., 1 year) |
+| TC34 | Check year/month toggle | 1. Switch between years and months | Tenure should convert correctly between years and months |
+| TC35 | Validate EMI updates with tenure change | 1. Change loan tenure | EMI, total interest, and total payment should recalculate accordingly |
+| TC36 | Verify input field sync | 1. Manually enter a tenure value | Slider should update to match the entered value |
+| TC37 | Boundary value testing | 1. Enter tenure at boundaries (min/max) | System should handle min/max tenure values correctly |
+
+
+
