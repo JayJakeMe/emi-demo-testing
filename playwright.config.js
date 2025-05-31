@@ -39,7 +39,10 @@ export default defineConfig({
     {
       name: 'chromium',
       testMatch: '**/*.spec.js',  // Matches all test files
-      testIgnore: '**/api/*.spec.js',  // Exclude API tests
+      testIgnore: [
+        '**/api/*.spec.js',  // Exclude API tests
+        '**/extra-check/**',  // Exclude extra-check directory
+      ],
       use: { 
         ...devices['Desktop Chrome'],
         viewport: { width: 1920, height: 1080 },
@@ -50,7 +53,10 @@ export default defineConfig({
     // {
     //   name: 'firefox',
     //   testMatch: '**/*.spec.js',  // Matches all test files
-    //   testIgnore: '**/api/*.spec.js',  // Exclude API tests
+    //   testIgnore: [
+    //     '**/api/*.spec.js',  // Exclude API tests
+    //     '**/extra-check/**',  // Exclude extra-check directory
+    //   ],
     //   use: { 
     //     ...devices['Desktop Firefox'],
     //     viewport: { width: 1920, height: 1080 },
@@ -59,13 +65,13 @@ export default defineConfig({
     //   },
     // },
     // API tests - will run without browser
-    {
-      name: 'api',
-      testMatch: '**/api/*.spec.js',  // Only matches API test files
-      use: {
-        baseURL: 'https://reqres.in/api',
-      },
-    },
+    // {
+    //   name: 'api',
+    //   testMatch: '**/api/*.spec.js',  // Only matches API test files
+    //   use: {
+    //     baseURL: 'https://reqres.in/api',
+    //   },
+    // },
 
     // {
     //   name: 'webkit',

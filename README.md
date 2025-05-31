@@ -124,17 +124,10 @@ npx playwright test --headed
 
 | ID | Test Case | Steps | Expected Result |
 |----|-----------|-------|-----------------|
-| TC01 | Verify default loan type | 1. Launch the application | Home Loan should be selected by default |
-| TC02 | Select Personal Loan | 1. Click "Personal Loan" option | Loan type changes to Personal Loan |
-| TC03 | Select Car Loan | 1. Click "Car Loan" option | Loan type changes to Car Loan |
-| TC04 | Switch from Personal to Car Loan | 1. Select Personal Loan<br>2. Click "Car Loan" | Loan type updates to Car Loan |
-| TC05 | Switch from Car to Home Loan | 1. Select Car Loan<br>2. Click "Home Loan" | Loan type updates to Home Loan |
-| TC06 | Verify all loan types | 1. Check all loan type options | All loan types should be selectable |
-| TC07 | Visual feedback on selection | 1. Select any loan type | Visual feedback (highlight/active state) appears |
-| TC08 | Persistence after refresh | 1. Select a loan type<br>2. Refresh the page | Selected loan type persists |
-| TC09 | Mobile responsiveness | 1. Test on mobile view | Loan type selector is usable and responsive |
-| TC10 | Accessibility | 1. Test with keyboard navigation | All loan types are accessible via keyboard |
-
+| TC01 | Verify default loan type | 1. Launch the application | Home Loan should be selected by default, verify default values |
+| TC02 | Verify Personal Loan | 1. Click "Personal Loan" option | Loan type changes to Personal Loan, verify default values |
+| TC03 | Verify Car Loan | 1. Click "Car Loan" option | Loan type changes to Car Loan, verify default values |
+| TC04 | Verify all loan tabs | 1. Check all loan tabs | All loan tabs should be selectable and active state should be visible |
 
 ### Loan Amount Tests
 
