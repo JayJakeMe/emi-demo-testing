@@ -91,8 +91,40 @@ test.describe('EMI Calculator Tests', () => {
       //   .allTextContents();
 
       // Get the final percentage values from data labels
-      const percentageTexts = await page.locator('#emipiechart .highcharts-data-labels tspan').allTextContents();
-      console.log('Data labels percentages:', percentageTexts);
+      // await expect(page.locator('#emipiechart')).toBeVisible();
+
+      // const emiChart = await page.locator('#emipiechart').isVisible();
+      // console.log('\n====================emipiechart is visible====================\n');
+      // const elementHtml = await page.locator('#emipiechart highcharts-series-group').evaluate(el => el.innerHTML);
+      // // Save to a file
+      // fs.writeFileSync('emipiechart.html', elementHtml);
+      // console.log('Element HTML saved to emipiechart.html');
+      // Take a screenshot of the chart series
+      // await page.locator('#emipiechart highcharts-series-group').screenshot({ 
+      //   path: 'test-results/chart-series.png',
+      //   type: 'png'  // 'png' or 'jpeg'
+      // });
+
+      // const emiChart = await page.locator('#emipiechart');
+
+      // emiChart.click();
+      // emiChart.hover();
+      // emiChart.dblclick();
+      // // console.log('====================emipiechart:', elementHtml, '====================\n');
+
+      // const percentageTexts = await page.locator('#emipiechart .highcharts-data-labels tspan').allTextContents();
+      // console.log('Data labels percentages:', percentageTexts);
+
+      // // Take a screenshot of the chart series
+      // const chartSeries = await page.locator('#emipiechart .highcharts-series-group').isVisible();
+      // console.log('\n====================Chart series is visible====================\n');
+      // console.log('Chart series is visible:', chartSeries);
+      // console.log('\n====================Chart series is visible====================\n');
+
+      // await page.locator('#emipiechart .highcharts-series-group').screenshot({ 
+      //   path: 'test-results/chart-series.png',
+      //   type: 'png'  // 'png' or 'jpeg'
+      // });
 
       // Extract numeric values from the percentage strings
       const principalPercentage = parseFloat(percentageTexts[0]);
