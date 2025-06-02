@@ -1,4 +1,4 @@
-const { test, expect } = require('../fixtures/emiCalculator.fixture');
+const { test, expect } = require('../../fixtures/emiCalculator.fixture');
 
 // Function to get computed styles for an element
 async function getElementStyles(page, selector, index) {
@@ -160,11 +160,11 @@ test('verify About Us heading properties', async ({ emiCalculatorPage: page }) =
   // Verify styles
   await expect(aboutUsHeading).toHaveCSS('font-size', '24px');
   await expect(aboutUsHeading).toHaveCSS('font-family', /Lato/);
-  // await expect(aboutUsHeading).toHaveCSS('font-weight', '500');
-  // await expect(aboutUsHeading).toHaveCSS('color', 'rgb(255, 255, 255)');
-  // await expect(aboutUsHeading).toHaveCSS('text-align', 'left');
-  // await expect(aboutUsHeading).toHaveCSS('display', 'block');
-  // await expect(aboutUsHeading).toHaveCSS('position', 'static');
+  await expect(aboutUsHeading).toHaveCSS('font-weight', '500');
+  await expect(aboutUsHeading).toHaveCSS('color', 'rgb(255, 255, 255)');
+  await expect(aboutUsHeading).toHaveCSS('text-align', 'left');
+  await expect(aboutUsHeading).toHaveCSS('display', 'block');
+  await expect(aboutUsHeading).toHaveCSS('position', 'static');
   
   // Verify no class or ID is set
   const className = await aboutUsHeading.getAttribute('class');
