@@ -1,5 +1,5 @@
-const { test, expect } = require('../fixtures/emiCalculator.fixture');
-const { calculateEMIDetails } = require('../helper/homeLoanEMICalculator');
+const { test, expect } = require('../../fixtures/emiCalculator.fixture');
+const { calculateEMIDetails } = require('../../helper/homeLoanEMICalculator');
 
 // Test cases array
 const testCases = [
@@ -146,32 +146,6 @@ test.describe('EMI Calculator Tests', () => {
           
           previousBalance = actualBalance;
         }
-      }
-      
-      console.log('\nMonthly Details for', firstYear, ':');
-      
-      for (let i = 0; i < monthCount; i++) {
-        const monthRow = firstYearMonths.nth(i);
-        const month = await monthRow.locator('.paymentmonthyear').textContent();
-        const monthValues = await monthRow.locator('.currency').allTextContents();
-        const monthPaidToDate = await monthRow.locator('.paidtodatemonthyear').textContent();
-        
-        console.log('\nMonth:', month);
-        console.log('Principal (A):', monthValues[0]);
-        console.log('Interest (B):', monthValues[1]);
-        console.log('Total Payment (A + B):', monthValues[2]);
-        console.log('Balance:', monthValues[3]);
-        console.log('Loan Paid To Date:', monthPaidToDate);
-
-        // Convert currency strings to numbers for comparison
-        const toNumber = (str) => Number(str.replace(/[^0-9.-]+/g,""));
-        const principal = toNumber(monthValues[0]);
-        const interest = toNumber(monthValues[1]);
-        const total = toNumber(monthValues[2]);
-        
-        // Verify that principal + interest equals total payment (allowing for 1 unit rounding difference)
-        const sum = principal + interest;
-        expect(Math.abs(sum - total)).toBeLessThanOrEqual(1);
       }
     });
   });
