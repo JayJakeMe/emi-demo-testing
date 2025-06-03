@@ -1,7 +1,6 @@
 const { test, expect } = require('../../fixtures/emiCalculator.fixture');
 const { calculateEMIDetails } = require('../../helper/homeLoanEMICalculator');
 
-// Test cases array
 const testCases = [
   {
     name: 'Mid-term average loan',
@@ -34,15 +33,12 @@ test.describe('EMI Calculator Tests', () => {
       console.log(`\nRunning test case: ${testCase.name}`);
       console.log(`\nLoan parameters: ${testCase.loanAmount} at ${testCase.interestRate}% for ${testCase.loanTermYears} years\n`);
 
-      // Verify we're on the right page
       await expect(page).toHaveTitle(/emi calculator/i);
 
-      // Use test case parameters
       const loanAmount = testCase.loanAmount;
       const interestRate = testCase.interestRate;
       const loanTermYears = testCase.loanTermYears;
       
-      // Fill in the loan parameters
       const loanAmountInput = page.getByRole('textbox', { name: 'Home Loan Amount' });
       await expect(loanAmountInput).toBeVisible();
 
@@ -56,20 +52,15 @@ test.describe('EMI Calculator Tests', () => {
 
 
       await page.getByRole('textbox', { name: 'Schedule showing EMI payments' }).click();
-      // Wait for the datepicker to be visible
       await page.waitForSelector('.datepicker-months');
-      // Select the month from the datepicker
       await page.locator('.datepicker-months .month', { hasText: testCase.startMonth }).first().click();
 
       
-      // Wait for the payment schedule to load
       await page.waitForSelector('#emipaymenttable');
       
-      // Get the main payment table (first table in #emipaymenttable)
       const mainTable = page.locator('#emipaymenttable > table').first();
       await expect(mainTable).toBeVisible();
     
-      // Get first year row data
       const firstYearRow = page.locator('.yearlypaymentdetails').first();
       const firstYear = await firstYearRow.locator('.paymentyear').textContent();
       const yearValues = await firstYearRow.locator('.currency').allTextContents();
@@ -83,11 +74,9 @@ test.describe('EMI Calculator Tests', () => {
       console.log('Balance:', yearValues[3]);
       console.log('Loan Paid To Date:', yearPaidToDate);
 
-      // Get all months in the first year
       const firstYearMonths = page.locator('.monthlypaymentdetails').first().locator('tr');
       const monthCount = await firstYearMonths.count();
       
-      // Process all years and months
       const allYearSections = await page.locator('.yearlypaymentdetails').all();
       let totalPrincipalPaid = 0;
       let previousBalance = testCase.loanAmount;
@@ -99,7 +88,6 @@ test.describe('EMI Calculator Tests', () => {
         const yearSection = allYearSections[yearIndex];
         const yearText = await yearSection.locator('.paymentyear').textContent();
         
-        // Get all months for current year
         const monthRows = await page.locator(`.yearlypaymentdetails:has(.paymentyear:has-text("${yearText}")) + .monthlypaymentdetails tr`).all();
         
         console.log(`\n=== Verifying Year: ${yearText} (${monthRows.length} months) ===`);
@@ -108,7 +96,6 @@ test.describe('EMI Calculator Tests', () => {
           const monthRow = monthRows[monthIndex];
           monthCounter++;
           
-          // Extract values
           const monthName = await monthRow.locator('.paymentmonthyear').textContent();
           const monthValues = await monthRow.locator('.currency').allTextContents();
           const paidToDateText = await monthRow.locator('.paidtodatemonthyear').textContent();
@@ -120,7 +107,6 @@ test.describe('EMI Calculator Tests', () => {
           const actualBalance = toNumber(monthValues[3]);
           const expectedBalance = previousBalance - principal;
           
-          // Calculate expected percentage
           totalPrincipalPaid += principal;
           const expectedPaidToDate = (totalPrincipalPaid / testCase.loanAmount) * 100;
           const actualPaidToDate = toPercentage(paidToDateText);
@@ -136,11 +122,9 @@ test.describe('EMI Calculator Tests', () => {
           console.log(`  - Expected: ${expectedPaidToDate.toFixed(2)}%`);
           console.log(`  - Actual: ${actualPaidToDate}%`);
           
-          // Verify balance
           expect(Math.abs(actualBalance - expectedBalance)).toBeLessThanOrEqual(1), 
             `Balance verification failed for ${monthName} ${yearText}`;
             
-          // Verify Loan Paid To Date (allow 0.05% difference for rounding)
           expect(Math.abs(actualPaidToDate - expectedPaidToDate)).toBeLessThanOrEqual(0.05),
             `Loan Paid To Date percentage verification failed for ${monthName} ${yearText}. Expected ~${expectedPaidToDate.toFixed(2)}%, got ${actualPaidToDate}%`;
           

@@ -118,11 +118,9 @@ test.describe('EMI Chart Tooltip Tests', () => {
           `Total ₹${payment.total}`);
       });
 
-      // Extract numeric value from tooltip text
       const principalText = tooltipTexts.find(text => text.includes('Principal : ₹'));
       const principalTooltipValue = principalText ? parseInt(principalText.replace(/[^0-9]/g, '')) : 0;
 
-      // Extract numeric value from tooltip text
       const totalPaymentText = tooltipTexts.find(text => text.includes('Total Payment : ₹'));
       const totalPaymentTooltipValue = totalPaymentText ? parseInt(totalPaymentText.replace(/[^0-9]/g, '')) : 0;
     
@@ -138,7 +136,7 @@ test.describe('EMI Chart Tooltip Tests', () => {
         
         expect(principalTooltipValue).toEqual(calculatedYearData.principal);
         expect(totalPaymentTooltipValue).toEqual(calculatedYearData.total);
-        // Check if values match
+
         const principalMatch = principalTooltipValue === calculatedYearData.principal;
         const totalMatch = totalPaymentTooltipValue === calculatedYearData.total;
 
