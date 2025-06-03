@@ -50,12 +50,10 @@ test.describe('EMI Calculator Tests', () => {
 
       await page.getByRole('textbox', { name: 'Loan Tenure' }).press('Enter');
 
-
       await page.getByRole('textbox', { name: 'Schedule showing EMI payments' }).click();
       await page.waitForSelector('.datepicker-months');
       await page.locator('.datepicker-months .month', { hasText: testCase.startMonth }).first().click();
 
-      
       await page.waitForSelector('#emipaymenttable');
       
       const mainTable = page.locator('#emipaymenttable > table').first();
