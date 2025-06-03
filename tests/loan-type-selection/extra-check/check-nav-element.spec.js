@@ -2,12 +2,9 @@ const { test, expect } = require('../../../fixtures/emiCalculator.fixture');
 
 test('verify loan navigation element', async ({ emiCalculatorPage }) => {
   const page = emiCalculatorPage;
-  
-  // Wait for the navigation element to be present in the DOM
   const nav = page.locator('.loanproduct-nav');
   await expect(nav).toBeAttached();
-  
-  // 1. Check CSS properties of the navigation element
+
   console.log('\n=== Checking CSS Properties ===');
   const navStyles = await nav.evaluate(el => {
     const styles = window.getComputedStyle(el);
@@ -23,8 +20,7 @@ test('verify loan navigation element', async ({ emiCalculatorPage }) => {
     };
   });
   console.log('Navigation element styles:', navStyles);
-  
-  // 2. Check parent elements for visibility issues
+
   console.log('\n=== Checking Parent Elements ===');
   const parentElements = await nav.evaluateHandle(el => {
     const parents = [];
@@ -48,7 +44,6 @@ test('verify loan navigation element', async ({ emiCalculatorPage }) => {
     }
     return parents;
   });
-  
   const parentArray = await parentElements.jsonValue();
   console.log('Parent elements (closest to nav first):');
   parentArray.forEach((parent, index) => {
@@ -62,8 +57,6 @@ test('verify loan navigation element', async ({ emiCalculatorPage }) => {
       zIndex: parent.zIndex
     });
   });
-  
-  // 3. Check if element is in viewport
   console.log('\n=== Viewport Check ===');
   const isInViewport = await nav.evaluate(el => {
     const rect = el.getBoundingClientRect();
@@ -75,8 +68,6 @@ test('verify loan navigation element', async ({ emiCalculatorPage }) => {
     );
   });
   console.log('Is navigation element in viewport?', isInViewport);
-  
-  // 4. Get element dimensions and position
   const box = await nav.boundingBox();
   console.log('\nElement dimensions and position:', {
     x: box?.x,
@@ -84,12 +75,9 @@ test('verify loan navigation element', async ({ emiCalculatorPage }) => {
     width: box?.width,
     height: box?.height
   });
-  
-  // 5. Check list items inside the navigation
   console.log('\n=== Checking List Items ===');
   const listItems = await nav.locator('li').all();
   console.log(`Found ${listItems.length} list items`);
-  
   for (const [index, item] of listItems.entries()) {
     const text = await item.textContent();
     const styles = await item.evaluate(el => {
@@ -119,8 +107,6 @@ test('verify loan navigation element', async ({ emiCalculatorPage }) => {
       height: itemBox?.height
     });
   }
-  
-  // 6. Check computed styles of the UL element
   console.log('\n=== Checking UL Styles ===');
   const ulStyles = await nav.evaluate(el => {
     const styles = window.getComputedStyle(el);
@@ -139,16 +125,13 @@ test('verify loan navigation element', async ({ emiCalculatorPage }) => {
     };
   });
   console.log('UL Styles:', ulStyles);
-  
-  // 7. Check for any content that might be affecting layout
+
   const hasVisibleContent = await nav.evaluate(el => {
     return el.offsetHeight > 0 || 
            el.scrollHeight > 0 || 
            el.getClientRects().length > 0;
   });
   console.log('Has visible content according to DOM:', hasVisibleContent);
-  
-  // 8. Take a screenshot for visual verification
   await page.screenshot({ path: 'nav-element.png' });
   console.log('\nScreenshot saved as nav-element.png');
 });
